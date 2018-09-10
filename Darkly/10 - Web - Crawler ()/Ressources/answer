@@ -1,0 +1,49 @@
+import requests
+import threading
+
+
+def get_links(url):
+    res = []
+    r = requests.get(url)
+    l = r.text.split("<a href=")
+    l = l[2:len(l) - 1]
+
+    for line in l:
+        tmp = line.split("/")
+        tmp = tmp[0].strip('"')
+        res.append(tmp)
+
+    try:
+        r2 = requests.get("{}/README".format(url))
+        if " " not in r2.text:
+            print("FLAG:", r2.text)
+            exit(1)
+    except Exception as e:
+        print("{}/README".format(url))
+        print(e)
+
+    return res
+
+
+def thrds(url, list_links):
+    threads = [threading.Thread(target=worker, args=[url, link]) for link in list_links]
+    [thread.start() for thread in threads]
+    [thread.join() for thread in threads]
+
+
+def worker(url, link):
+    curr_url = "{}/{}".format(url, link)
+    curr_links = get_links(curr_url)
+    for link in curr_links:
+        worker(curr_url, link)
+
+
+def main():
+    start_url = "http://10.111.1.24/.hidden"
+    start_links = get_links(start_url)
+    thrds(start_url, start_links)
+
+
+if __name__ == '__main__':
+    main()
+

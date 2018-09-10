@@ -1,0 +1,7 @@
+-http://10.111.1.24/robots.txt
+- disallow: /whatever
+
+http://10.111.1.24/whatever/
+htpasswd -> root:8621ffdbc5698829397d97767ac13db3
+md5 (8621ffdbc5698829397d97767ac13db3) -> dragon
+

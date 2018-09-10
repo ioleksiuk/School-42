@@ -1,0 +1,5 @@
+- http://10.111.1.24//?page=feedback
+-Inspect the element of the <input type = "text"> or Just type the word 'script' into one of the input
+-Remove the maxlength attribute
+-Write HTML code in this same input and submit
+

